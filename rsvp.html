@@ -1,63 +1,85 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Devon and Haley"s Wedding</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-body,h1 {font-family: system-ui, sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url("./assets/forestbridge.jpg");
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+  <title>Devon and Haley"s Wedding</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body,
+    h1 {
+      font-family: system-ui, sans-serif
+    }
+
+    body,
+    html {
+      height: 100%
+    }
+
+    .bgimg {
+      background-image: url("./assets/forestbridge.jpg");
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    #container {
+      width: 80vw;
+      max-width: 800px;
+    }
+
+    #google-form {
+      margin-top: 10vh;
+    }
+  </style>
 </head>
+
 <body>
-<script>
-const FORM_URL = "https://xswcl2ffjfew5zw5hdigqichmq0usjkd.lambda-url.us-west-1.on.aws"
-window.addEventListener("load", function () {
-    const rsvp = document.getElementById("rsvp");
-    rsvp.addEventListener("submit", async (e) => {
+  <script>
+    const FORM_URL = "https://xswcl2ffjfew5zw5hdigqichmq0usjkd.lambda-url.us-west-1.on.aws"
+    window.addEventListener("load", function () {
+      const rsvp = document.getElementById("rsvp");
+      rsvp.addEventListener("submit", async (e) => {
         e.preventDefault();
         const name = document.getElementById("name").value;
         let response;
         try {
-            response = await fetch(FORM_URL + `?name=${name}`);
+          response = await fetch(FORM_URL + `?name=${name}`);
         } catch {
-            document.getElementById("server-error").hidden = false;
-            return;
+          document.getElementById("server-error").hidden = false;
+          return;
         }
         document.getElementById("server-error").hidden = true;
         if (response.status == 404) {
-            document.getElementById("error").hidden = false;
-            return;
+          document.getElementById("error").hidden = false;
+          return;
         }
         document.getElementById("error").hidden = true;
         rsvp.hidden = true;
-        const iframe = document.getElementById("form");
+        const iframe = document.getElementById("google-form");
         iframe.src = JSON.parse(await response.text()).url;
         iframe.hidden = false;
+      });
     });
-});
-</script>
+  </script>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-middle">
-    <h1>RSVP</h1>
-    <form id="rsvp" action="">
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div id="container" class="w3-display-middle">
+      <h1>RSVP</h1>
+      <form id="rsvp" action="">
         <label for="name">Enter your name:</label>
         <input type="text" id="name" name="name" value="">
         <input type="submit" value="Submit">
-    </form>
-    <p id="server-error" hidden>Sorry, something went wrong. Please try again later or reach out to us directly.</p>
-    <p id="error" hidden>Sorry, we didn't recognize your name. Are you sure you spelled it correctly? Reach out if you think we made a mistake.</p>
-    <iframe background="white" hidden id="form" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </form>
+      <p id="server-error" hidden>Sorry, something went wrong. Please try again later or reach out to us directly.</p>
+      <p id="error" hidden>Sorry, we didn't recognize your name. Are you sure you spelled it correctly? Reach out if you
+        think we made a mistake.</p>
+      <iframe hidden id="google-form" width="640" height="700" frameborder="0" marginheight="0"
+        marginwidth="0">Loading…</iframe>
+    </div>
   </div>
-</div>
 
 </body>
+
 </html>
