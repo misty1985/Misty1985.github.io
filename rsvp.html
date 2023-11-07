@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Devon and Haley"s Wedding</title>
+  <title>Devon and Haley's Wedding</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -29,9 +29,16 @@
       max-width: 800px;
     }
 
-    #google-form {
-      background-color: rgba(255, 255, 255, 0.7);
+    #form-container {
+      min-height: 300px;
+      height: 60vh;
+    }
+
+    #iframe-form {
+      height: 100%;
+      width: 100%;
       border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
     }
   </style>
 </head>
@@ -58,9 +65,9 @@
         }
         document.getElementById("error").hidden = true;
         rsvp.hidden = true;
-        const iframe = document.getElementById("google-form");
+        const iframe = document.getElementById("iframe-form");
         iframe.src = JSON.parse(await response.text()).url;
-        iframe.hidden = false;
+        document.getElementById("form-container").hidden = false;
       });
     });
   </script>
@@ -76,8 +83,9 @@
       <p id="server-error" hidden>Sorry, something went wrong. Please try again later or reach out to us directly.</p>
       <p id="error" hidden>Sorry, we didn't recognize your name. Are you sure you spelled it correctly? Reach out if you
         think we made a mistake.</p>
-      <iframe hidden id="google-form" width="640" height="700" frameborder="0" marginheight="0"
-        marginwidth="0">Loading…</iframe>
+      <div hidden id="form-container">
+        <iframe id="iframe-form" frameborder="0">Loading…</iframe>
+      </div>
     </div>
   </div>
 
