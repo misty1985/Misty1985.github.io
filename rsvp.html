@@ -63,28 +63,29 @@
           document.getElementById("error").hidden = false;
           return;
         }
-        document.getElementById("error").hidden = true;
-        rsvp.hidden = true;
-        const iframe = document.getElementById("iframe-form");
-        iframe.src = JSON.parse(await response.text()).url;
-        document.getElementById("form-container").hidden = false;
+        window.location.href = JSON.parse(await response.text()).url
       });
     });
   </script>
 
-  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-    <div id="container" class="w3-display-middle">
-      <h1>RSVP</h1>
-      <form id="rsvp" action="">
-        <label for="name">Enter your name:</label>
-        <input type="text" id="name" name="name" value="">
-        <input type="submit" value="Submit">
-      </form>
-      <p id="server-error" hidden>Sorry, something went wrong. Please try again later or reach out to us directly.</p>
-      <p id="error" hidden>Sorry, we didn't recognize your name. Are you sure you spelled it correctly? Reach out if you
-        think we made a mistake.</p>
-      <div hidden id="form-container">
-        <iframe id="iframe-form" frameborder="0">Loading…</iframe>
+  <div class="w3-display-container bgimg w3-text-white w3-xlarge">
+    <div class="w3-bar w3-padding">
+      <a class="w3-bar-item w3-button w3-left" href="/index.html">Home</a>
+      <a class="w3-bar-item w3-button w3-left" href="/travel.html">Travel</a>
+      <a class="w3-bar-item w3-button w3-left" href="/details.html">Details</a>
+      <a class="w3-bar-item w3-button w3-xxxlarge w3-round w3-right w3-light-grey" href="/rsvp.html">RSVP</a>
+    </div>
+    <div class="w3-animate-opacity w3-text-white">
+      <div id="container" class="w3-display-middle">
+        <h1>RSVP</h1>
+        <form id="rsvp" action="">
+          <label for="name">Enter your name:</label>
+          <input type="text" id="name" name="name" value="">
+          <input type="submit" value="Submit">
+        </form>
+        <p id="server-error" hidden>Sorry, something went wrong. Please try again later or reach out to us directly.</p>
+        <p id="error" hidden>Sorry, we didn't recognize your name. Are you sure you spelled it correctly? Reach out if
+          you think we made a mistake.</p>
       </div>
     </div>
   </div>
