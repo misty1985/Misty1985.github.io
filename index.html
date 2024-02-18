@@ -23,11 +23,17 @@
       background-position: center;
       background-size: cover;
     }
+
+    @media (max-height: 480px) {
+      .w3-bar {
+        display: none;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="w3-display-container w3-main bgimg w3-text-white w3-xlarge">
+  <div class="w3-display-container w3-main bgimg w3-text-white w3-large">
     <div class="w3-bar w3-padding">
       <a class="w3-bar-item w3-button w3-left" href="/index.html">Home</a>
       <a class="w3-bar-item w3-button w3-left" href="/travel.html">Travel</a>
