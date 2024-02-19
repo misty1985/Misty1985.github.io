@@ -1,94 +1,99 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Devon and Haley's Wedding</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+      body,
+      h1 {
+        font-family: system-ui, sans-serif;
+      }
 
-<head>
-  <title>Devon and Haley's Wedding</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <style>
-    body,
-    h1 {
-      font-family: system-ui, sans-serif
-    }
+      body,
+      html {
+        height: 100%;
+      }
 
-    body,
-    html {
-      height: 100%
-    }
+      .bgimg {
+        background-image: url("./assets/forestbridge.jpg");
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
 
-    .bgimg {
-      background-image: url("./assets/forestbridge.jpg");
-      min-height: 100%;
-      background-position: center;
-      background-size: cover;
-    }
+      #container {
+        width: 80vw;
+        max-width: 800px;
+      }
 
-    #container {
-      width: 80vw;
-      max-width: 800px;
-    }
+      #form-container {
+        min-height: 300px;
+        height: 60vh;
+      }
 
-    #form-container {
-      min-height: 300px;
-      height: 60vh;
-    }
+      #iframe-form {
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+  </head>
 
-    #iframe-form {
-      height: 100%;
-      width: 100%;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.7);
-    }
-  </style>
-</head>
-
-<body>
-  <script>
-    const FORM_URL = "https://xswcl2ffjfew5zw5hdigqichmq0usjkd.lambda-url.us-west-1.on.aws"
-    window.addEventListener("load", function () {
-      const rsvp = document.getElementById("rsvp");
-      rsvp.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        let response;
-        try {
-          response = await fetch(FORM_URL + `?name=${name}`);
-        } catch {
-          document.getElementById("server-error").hidden = false;
-          return;
-        }
-        document.getElementById("server-error").hidden = true;
-        if (response.status == 404) {
-          document.getElementById("error").hidden = false;
-          return;
-        }
-        window.location.href = JSON.parse(await response.text()).url
+  <body>
+    <script>
+      const FORM_URL =
+        "https://xswcl2ffjfew5zw5hdigqichmq0usjkd.lambda-url.us-west-1.on.aws";
+      window.addEventListener("load", function () {
+        const rsvp = document.getElementById("rsvp");
+        rsvp.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          let response;
+          try {
+            response = await fetch(FORM_URL + `?name=${name}`);
+          } catch {
+            document.getElementById("server-error").hidden = false;
+            return;
+          }
+          document.getElementById("server-error").hidden = true;
+          if (response.status == 404) {
+            document.getElementById("error").hidden = false;
+            return;
+          }
+          window.location.href = JSON.parse(await response.text()).url;
+        });
       });
-    });
-  </script>
+    </script>
 
-  <div class="w3-display-container bgimg w3-text-white w3-large">
-    <div class="w3-bar w3-padding">
-      <a class="w3-bar-item w3-button w3-left" href="/index.html">Home</a>
-      <a class="w3-bar-item w3-button w3-left" href="/travel.html">Travel</a>
-      <a class="w3-bar-item w3-button w3-left" href="/details.html">Details</a>
-    </div>
-    <div class="w3-animate-opacity w3-text-white">
-      <div id="container" class="w3-display-middle">
-        <h1>RSVP</h1>
-        <form id="rsvp" action="">
-          <label for="name">Enter your name:</label>
-          <input type="text" id="name" name="name" value="">
-          <input type="submit" value="Submit">
-        </form>
-        <p id="server-error" hidden>Sorry, something went wrong. Please try again later or reach out to us directly.</p>
-        <p id="error" hidden>Sorry, we didn't recognize your name. Are you sure you spelled it correctly? Reach out if
-          you think we made a mistake.</p>
+    <div class="w3-display-container bgimg w3-text-white w3-large">
+      <div class="w3-bar w3-padding">
+        <a class="w3-bar-item w3-button w3-left" href="/index.html">Home</a>
+        <a class="w3-bar-item w3-button w3-left" href="/travel.html">Travel</a>
+        <a class="w3-bar-item w3-button w3-left" href="/details.html"
+          >Details</a
+        >
+      </div>
+      <div class="w3-animate-opacity w3-text-white">
+        <div id="container" class="w3-display-middle">
+          <h1>RSVP</h1>
+          <form id="rsvp" action="">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" value="" />
+            <input type="submit" value="Submit" />
+          </form>
+          <p id="server-error" hidden>
+            Sorry, something went wrong. Please try again later or reach out to
+            us directly.
+          </p>
+          <p id="error" hidden>
+            Sorry, we didn't recognize your name. Are you sure you spelled it
+            correctly? Reach out if you think we made a mistake.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

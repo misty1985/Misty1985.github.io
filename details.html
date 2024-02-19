@@ -1,89 +1,151 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Devon and Haley's Wedding</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <style>
-        body,
-        h1 {
-            font-family: system-ui, sans-serif;
-        }
+      body,
+      h1 {
+        font-family: system-ui, sans-serif;
+      }
 
-        body,
-        html {
-            height: 100%;
-        }
+      body,
+      html {
+        height: 100%;
+      }
 
-        .bgimg {
-            background-image: url("./assets/forestbridge.jpg");
-            min-height: 100%;
-            background-position: center;
-            background-size: cover;
-        }
+      .bgimg {
+        background-image: url("./assets/forestbridge.jpg");
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
 
-        .side-image {
-            width: 80%;
-            max-width: 720px;
-            max-height: 960px;
-        }
+      .side-image {
+        width: 80%;
+        max-width: 720px;
+        max-height: 960px;
+      }
 
-        .carousel {
-            display: flex;
-            list-style: none;
-            overflow: auto;
-            scroll-snap-type: x mandatory;
-            width: 400px;
-        }
+      .carousel {
+        display: flex;
+        list-style: none;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        width: 400px;
+      }
 
-        .carousel>li {
-            flex-shrink: 0;
-            width: 100%;
-            scroll-snap-align: start;
-        }
+      .carousel > li {
+        flex-shrink: 0;
+        width: 100%;
+        scroll-snap-align: start;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="w3-display-container">
-        <div class="w3-bar bgimg w3-padding w3-large w3-text-white">
-            <a class="w3-bar-item w3-button w3-left" href="/index.html">Home</a>
-            <a class="w3-bar-item w3-button w3-left" href="/travel.html">Travel</a>
-            <a class="w3-bar-item w3-button w3-left" href="/details.html">Details</a>
-            <a class="w3-bar-item w3-button w3-round w3-right w3-light-grey" href="/rsvp.html">RSVP</a>
+      <div class="w3-bar bgimg w3-padding w3-large w3-text-white">
+        <a class="w3-bar-item w3-button w3-left" href="/index.html">Home</a>
+        <a class="w3-bar-item w3-button w3-left" href="/travel.html">Travel</a>
+        <a class="w3-bar-item w3-button w3-left" href="/details.html"
+          >Details</a
+        >
+        <a
+          class="w3-bar-item w3-button w3-round w3-right w3-light-grey"
+          href="/rsvp.html"
+          >RSVP</a
+        >
+      </div>
+      <div class="w3-row">
+        <div class="w3-half w3-panel">
+          <h2>Details</h2>
+          <div>
+            <h3>Theme: Midsummer Night's Dream</h3>
+            <h4>Dress code</h4>
+            <p>
+              Garden/cocktail bohemian/enchanted. Recommended footwear: flat
+              shoes (no heels/stilettos given outdoor and uneven), no wedges or
+              platform sandles above an inch, you'll really want a sturdy boot.
+            </p>
+            <p>No Jeans or shorts. For example (swipe for more pictures):</p>
+          </div>
+          <ul class="carousel">
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/1.png"
+                alt="Outfit 1"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/2.png"
+                alt="Outfit 2"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/3.png"
+                alt="Outfit 3"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/4.png"
+                alt="Outfit 4"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/5.png"
+                alt="Outfit 5"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/6.png"
+                alt="Outfit 6"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/7.png"
+                alt="Outfit 7"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/8.png"
+                alt="Outfit 8"
+              />
+            </li>
+            <li>
+              <img
+                class="side-image w3-image"
+                src="./assets/outfits/9.png"
+                alt="Outfit 9"
+              />
+            </li>
+          </ul>
         </div>
-        <div class="w3-row">
-            <div class="w3-half w3-panel">
-                <h2>Details</h2>
-                <div>
-                    <h3>Theme: Midsummer Night's Dream</h3>
-                    <h4>Dress code</h4>
-                    <p>
-                        Garden/cocktail bohemian/enchanted. Recommended footwear: flat
-                        shoes (no heels/stilettos given outdoor and uneven), no wedges or
-                        platform sandles above an inch, you'll really want a sturdy boot.
-                    </p>
-                    <p>No Jeans or shorts. For example (swipe for more pictures):</p>
-                </div>
-                <ul class="carousel">
-                    <li><img class="side-image w3-image" src="./assets/outfits/1.png" alt="Outfit 1" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/2.png" alt="Outfit 2" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/3.png" alt="Outfit 3" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/4.png" alt="Outfit 4" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/5.png" alt="Outfit 5" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/6.png" alt="Outfit 6" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/7.png" alt="Outfit 7" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/8.png" alt="Outfit 8" /></li>
-                    <li><img class="side-image w3-image" src="./assets/outfits/9.png" alt="Outfit 9" /></li>
-                </ul>
-            </div>
-            <div class="w3-half w3-panel w3-center">
-                <img class="side-image w3-image" src="./assets/house.png" alt="House" />
-            </div>
+        <div class="w3-half w3-panel w3-center">
+          <img
+            class="side-image w3-image"
+            src="./assets/house.png"
+            alt="House"
+          />
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
