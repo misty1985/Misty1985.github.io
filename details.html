@@ -3,22 +3,22 @@
 
 <head>
     <title>Devon and Haley's Wedding</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <style>
         body,
         h1 {
-            font-family: system-ui, sans-serif
+            font-family: system-ui, sans-serif;
         }
 
         body,
         html {
-            height: 100%
+            height: 100%;
         }
 
         .bgimg {
-            background-image: url('./assets/forestbridge.jpg');
+            background-image: url("./assets/forestbridge.jpg");
             min-height: 100%;
             background-position: center;
             background-size: cover;
@@ -28,6 +28,20 @@
             width: 80%;
             max-width: 720px;
             max-height: 960px;
+        }
+
+        .carousel {
+            display: flex;
+            list-style: none;
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+            width: 400px;
+        }
+
+        .carousel>li {
+            flex-shrink: 0;
+            width: 100%;
+            scroll-snap-align: start;
         }
     </style>
 </head>
@@ -47,19 +61,26 @@
                     <h3>Theme: Midsummer Night's Dream</h3>
                     <h4>Dress code</h4>
                     <p>
-                        Garden/cocktail bohemian/enchanted. Recommended footwear: flat shoes (no heels/stilettos given
-                        outdoor and uneven), no wedges or platform sandles above an inch, you'll really want a sturdy
-                        boot.
+                        Garden/cocktail bohemian/enchanted. Recommended footwear: flat
+                        shoes (no heels/stilettos given outdoor and uneven), no wedges or
+                        platform sandles above an inch, you'll really want a sturdy boot.
                     </p>
-                    <p>No Jeans or shorts. For example:</p>
+                    <p>No Jeans or shorts. For example (swipe for more pictures):</p>
                 </div>
-                <div>
-                    <img style="max-width: 420px;width: 80%;"
-                        src="https://media-api.xogrp.com/images/1833bae8-c5a2-4aa9-99bd-17bbdb4a4cda~rs_768.h" />
-                </div>
+                <ul class="carousel">
+                    <li><img class="side-image w3-image" src="./assets/outfits/1.png" alt="Outfit 1" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/2.png" alt="Outfit 2" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/3.png" alt="Outfit 3" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/4.png" alt="Outfit 4" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/5.png" alt="Outfit 5" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/6.png" alt="Outfit 6" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/7.png" alt="Outfit 7" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/8.png" alt="Outfit 8" /></li>
+                    <li><img class="side-image w3-image" src="./assets/outfits/9.png" alt="Outfit 9" /></li>
+                </ul>
             </div>
             <div class="w3-half w3-panel w3-center">
-                <img class="side-image w3-image" src="./assets/house.png" alt="House">
+                <img class="side-image w3-image" src="./assets/house.png" alt="House" />
             </div>
         </div>
     </div>
